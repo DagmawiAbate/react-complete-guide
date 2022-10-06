@@ -7,12 +7,21 @@ class App extends Component {
     persons: [
       { name: 'Dagi', age: '24' },
       { name: 'Muluhabet', age: '23' },
-      { name: 'Kate', age: '21'}
-    ]
+      { name: 'Kate', age: '21' }
+    ],
+    otherState: 'some other value'
   }
 
   switchNameHandler = () => {
-    console.log('Was clicked!')
+    // console.log('Was clicked!')
+    // DON'T DO THIS: this.state.persons[0].name = 'Dagmawi'
+    this.setState({
+      persons: [
+        { name: 'Dagmawi', age: '24' },
+        { name: 'Muluhabet', age: '23' },
+        { name: 'Kate', age: '20' }
+      ]
+    })
   }
 
   render() {
@@ -21,9 +30,20 @@ class App extends Component {
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
         <button onClick={this.switchNameHandler}>Switch Name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} >My Hobbies: Football</Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+        />
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+        >
+          My Hobbies: Football
+        </Person>
+        <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age}
+        />
       </div>
     )
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'))
