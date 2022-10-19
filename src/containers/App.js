@@ -24,7 +24,7 @@ class App extends Component {
     console.log('[App.js] getDerivedStateProps', props)
     return state
   }
-  
+
   // componentWillMount() {
   //   console.log('[App.js] componentWillMount')
   // }
