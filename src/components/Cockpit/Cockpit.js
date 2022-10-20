@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import classes from './Cockpit.css'
 
 const cookpit = (props) => {
+  useEffect(() => {
+    console.log('[Cockpit.js] useEffect');
+  })
+
   const assignedClasses = []
   let btnClass = ''
   if (props.showPersons) {
