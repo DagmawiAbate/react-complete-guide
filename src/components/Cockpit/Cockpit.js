@@ -28,10 +28,10 @@ const cookpit = (props) => {
   if (props.showPersons) {
     btnClass = classes.Red
   }
-  if (props.persons.length <= 2) {
+  if (props.personsLength <= 2) {
     assignedClasses.push(classes.red) // classes = ['red']
   }
-  if (props.persons.length <= 1) {
+  if (props.personsLength <= 1) {
     assignedClasses.push(classes.bold) // classes = ['red', 'bold']
   }
 
@@ -46,4 +46,4 @@ const cookpit = (props) => {
   )
 }
 
-export default cookpit
+export default React.memo(cookpit)
